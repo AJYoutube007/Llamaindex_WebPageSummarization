@@ -1,0 +1,8 @@
+flowchart TB
+  __start__(__start__)
+  load_page(load_page)
+  summarize(summarize)
+  __end__(__end__)
+  __start__ --> |UrlEvent|load_page
+  load_page --> |PageContentEvent|summarize
+  summarize --> |SummaryEvent|__end__

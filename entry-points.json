@@ -1,0 +1,85 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "b36fa4e4-fbb7-4722-acf8-a31ebf2b6b29",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "title": "Url",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "url"
+                ]
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "title": "Url",
+                        "type": "string"
+                    },
+                    "summary": {
+                        "title": "Summary",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "url",
+                    "summary"
+                ]
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null
+                    },
+                    {
+                        "id": "load_page",
+                        "name": "load_page",
+                        "type": "node",
+                        "subgraph": null
+                    },
+                    {
+                        "id": "summarize",
+                        "name": "summarize",
+                        "type": "node",
+                        "subgraph": null
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "__start__",
+                        "target": "load_page",
+                        "label": "UrlEvent"
+                    },
+                    {
+                        "source": "load_page",
+                        "target": "summarize",
+                        "label": "PageContentEvent"
+                    },
+                    {
+                        "source": "summarize",
+                        "target": "__end__",
+                        "label": "SummaryEvent"
+                    }
+                ]
+            }
+        }
+    ]
+}

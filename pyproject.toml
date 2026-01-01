@@ -1,0 +1,14 @@
+[project]
+name = "webpage_Summarizer"
+version = "0.0.1"
+description = "webpage_Summarizer"
+authors = [{ name = "Abhishek Jagtap", email = "jagtapabhi13@gmail.com" }]
+dependencies = [
+    "uipath-llamaindex>=0.1.0",
+    "llama-index>=0.10.40",
+    "llama-index-readers-web>=0.1.16",
+    "google-genai>=0.6.0",
+    "python-dotenv>=1.0.1",
+    "requests>=2.32.0"
+]
+requires-python = ">=3.11"
